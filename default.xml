@@ -2,8 +2,14 @@
 <manifest>
 
   <remote  name="aosp"
-           fetch=".."
+           fetch="https://android.googlesource.com"
            review="https://android-review.googlesource.com/" />
+  <remote  name="bitbucket"
+           fetch="https://bitbucket.org/copperhead-security/"
+           revision="refs/heads/oreo-r3-release" />
+  <remote  name="github"
+           fetch="https://github.com/copperheados/"
+           revision="refs/heads/oreo-r3-release" />
   <default revision="refs/tags/android-8.0.0_r9"
            remote="aosp"
            sync-j="4" />
