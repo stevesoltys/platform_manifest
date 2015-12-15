@@ -2,7 +2,14 @@
 <manifest>
 
   <remote  name="aosp"
-           fetch=".." />
+           fetch="https://android.googlesource.com"
+           review="android-review.googlesource.com" />
+  <remote  name="bitbucket"
+           fetch="https://bitbucket.org/copperhead-security/"
+           revision="refs/heads/nougat-mr1.1-release" />
+  <remote  name="github"
+           fetch="https://github.com/copperheados/"
+           revision="refs/heads/nougat-mr1.1-release" />
   <default revision="refs/tags/android-7.1.1_r46"
            remote="aosp"
            sync-j="4" />
