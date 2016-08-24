@@ -65,7 +65,7 @@
   <project path="device/huawei/angler" name="device/huawei/angler" groups="device,angler,broadcom_pdk" />
   <project path="device/huawei/angler-kernel" name="device/huawei/angler-kernel" groups="device,angler,broadcom_pdk" clone-depth="1" />
   <project path="device/intel/edison" name="device/intel/edison" groups="device" />
-  <project path="device/lge/bullhead" name="device/lge/bullhead" groups="device,bullhead" />
+  <project path="device/lge/bullhead" name="device_lge_bullhead" groups="device,bullhead" remote="github" />
   <project path="device/lge/bullhead-kernel" name="device/lge/bullhead-kernel" groups="device,bullhead" clone-depth="1" />
   <project path="device/linaro/hikey" name="device/linaro/hikey" />
   <project path="device/linaro/hikey-kernel" name="device/linaro/hikey-kernel" clone-depth="1" />
