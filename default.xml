@@ -62,7 +62,6 @@
   <project path="device/google/marlin-kernel" name="device/google/marlin-kernel" groups="device,marlin" clone-depth="1" />
   <project path="device/htc/flounder" name="device_htc_flounder" groups="device,flounder,broadcom_pdk" remote="github" />
   <project path="device/huawei/angler" name="device_huawei_angler" groups="device,angler,broadcom_pdk" remote="github" />
-  <project path="device/huawei/angler-kernel" name="device/huawei/angler-kernel" groups="device,angler,broadcom_pdk" clone-depth="1" />
   <project path="device/intel/edison" name="device/intel/edison" groups="device" />
   <project path="device/lge/bullhead" name="device_lge_bullhead" groups="device,bullhead" remote="github" />
   <project path="device/linaro/hikey" name="device/linaro/hikey" />
