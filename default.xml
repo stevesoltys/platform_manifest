@@ -391,6 +391,7 @@
   <project path="hardware/ti/omap4xxx" name="platform/hardware/ti/omap4xxx" groups="omap4" />
   <project path="kernel/lge/bullhead" name="copperheados/kernel_lge_bullhead" remote="github" />
   <project path="kernel/htc/flounder" name="copperheados/kernel_htc_flounder" remote="github" />
+  <project path="kernel/huawei/angler" name="copperheados/kernel_huawei_angler" remote="github" />
   <project path="libcore" name="platform/libcore" groups="pdk" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
   <project path="ndk" name="copperheados/platform_ndk" groups="generic_fs" remote="github" />
