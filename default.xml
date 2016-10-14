@@ -6,7 +6,7 @@
            review="android-review.googlesource.com" />
   <remote  name="github"
            fetch="https://github.com/"
-           revision="refs/heads/nougat-mr0.5-release" />
+           revision="refs/tags/NBD90Z.2016.10.13.23.14.08" />
   <default revision="refs/tags/android-7.0.0_r14"
            remote="aosp"
            sync-j="4" />
