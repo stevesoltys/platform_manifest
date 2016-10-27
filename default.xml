@@ -6,10 +6,10 @@
            review="android-review.googlesource.com" />
   <remote  name="bitbucket"
            fetch="https://bitbucket.org/copperhead-security/"
-           revision="refs/heads/nougat-mr0.5-release" />
+           revision="refs/tags/NBD90Z.2016.10.27.20.13.46" />
   <remote  name="github"
            fetch="https://github.com/"
-           revision="refs/heads/nougat-mr0.5-release" />
+           revision="refs/tags/NBD90Z.2016.10.27.20.13.46" />
   <default revision="refs/tags/android-7.0.0_r14"
            remote="aosp"
            sync-j="4" />
