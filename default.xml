@@ -58,7 +58,7 @@
   <project path="device/google/contexthub" name="device/google/contexthub" groups="device" />
   <project path="device/google/dragon" name="device/google/dragon" groups="device,dragon" />
   <project path="device/google/dragon-kernel" name="device/google/dragon-kernel" groups="device,dragon" clone-depth="1" />
-  <project path="device/google/marlin" name="device/google/marlin" groups="device,marlin" />
+  <project path="device/google/marlin" name="device_google_marlin" groups="device,marlin" remote="github" />
   <project path="device/google/marlin-kernel" name="device/google/marlin-kernel" groups="device,marlin" clone-depth="1" />
   <project path="device/htc/flounder" name="device_htc_flounder" groups="device,flounder,broadcom_pdk" remote="github" />
   <project path="device/huawei/angler" name="device_huawei_angler" groups="device,angler,broadcom_pdk" remote="github" />
