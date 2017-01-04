@@ -6,10 +6,10 @@
            review="android-review.googlesource.com" />
   <remote  name="gitlab"
            fetch="https://gitlab.com/copperhead/"
-           revision="refs/heads/nougat-mr1.1-release" />
+           revision="refs/tags/N4F26J.2017.01.04.05.44.59" />
   <remote  name="github"
            fetch="https://github.com/copperheados/"
-           revision="refs/heads/nougat-mr1.1-release" />
+           revision="refs/tags/N4F26J.2017.01.04.05.44.59" />
   <default revision="refs/tags/android-7.1.1_r11"
            remote="aosp"
            sync-j="4" />
