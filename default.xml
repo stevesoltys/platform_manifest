@@ -54,13 +54,8 @@
   <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" groups="device" />
   <project path="device/google/atv" name="device/google/atv" groups="device,fugu,broadcom_pdk,generic_fs" />
   <project path="device/google/contexthub" name="device/google/contexthub" groups="device" />
-  <project path="device/google/dragon" name="device/google/dragon" groups="device,dragon" />
-  <project path="device/google/dragon-kernel" name="device/google/dragon-kernel" groups="device,dragon" clone-depth="1" />
-  <project path="device/google/marlin" name="device_google_marlin" groups="device,marlin" remote="github" />
   <project path="device/htc/flounder" name="device_htc_flounder" groups="device,flounder,broadcom_pdk" remote="github" />
-  <project path="device/huawei/angler" name="device_huawei_angler" groups="device,angler,broadcom_pdk" remote="github" />
   <project path="device/intel/edison" name="device/intel/edison" groups="device" />
-  <project path="device/lge/bullhead" name="device_lge_bullhead" groups="device,bullhead" remote="github" />
   <project path="device/linaro/hikey" name="device/linaro/hikey" />
   <project path="device/linaro/hikey-kernel" name="device/linaro/hikey-kernel" clone-depth="1" />
   <project path="device/sample" name="device/sample" groups="pdk" />
@@ -394,10 +389,7 @@
   <project path="hardware/ti/omap3" name="platform/hardware/ti/omap3" groups="omap3" />
   <project path="hardware/ti/omap4-aah" name="platform/hardware/ti/omap4-aah" groups="omap4-aah" />
   <project path="hardware/ti/omap4xxx" name="platform/hardware/ti/omap4xxx" groups="omap4" />
-  <project path="kernel/lge/bullhead" name="kernel_lge_bullhead" remote="github" />
   <project path="kernel/htc/flounder" name="kernel_htc_flounder" remote="github" />
-  <project path="kernel/huawei/angler" name="kernel_huawei_angler" remote="github" />
-  <project path="kernel/google/marlin" name="kernel_google_marlin" remote="github" />
   <project path="libcore" name="platform/libcore" groups="pdk" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
   <project path="ndk" name="platform_ndk" groups="generic_fs" remote="github" />
