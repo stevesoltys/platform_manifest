@@ -6,10 +6,10 @@
            review="https://android-review.googlesource.com/" />
   <remote  name="gitlab"
            fetch="https://gitlab.com/copperhead/"
-           revision="refs/heads/nougat-mr2-release" />
+           revision="refs/tags/N2G47J.2017.04.16.11.57.55" />
   <remote  name="github"
            fetch="https://github.com/copperheados/"
-           revision="refs/heads/nougat-mr2-release" />
+           revision="refs/tags/N2G47J.2017.04.16.11.57.55" />
   <default revision="refs/tags/android-7.1.2_r5"
            remote="aosp"
            sync-j="4" />
