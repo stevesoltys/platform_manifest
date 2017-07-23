@@ -6,10 +6,10 @@
            review="https://android-review.googlesource.com/" />
   <remote  name="bitbucket"
            fetch="https://bitbucket.org/copperhead-security/"
-           revision="refs/heads/nougat-mr2-release" />
+           revision="refs/tags/N2G48B.2017.07.23.16.40.26" />
   <remote  name="github"
            fetch="https://github.com/copperheados/"
-           revision="refs/heads/nougat-mr2-release" />
+           revision="refs/tags/N2G48B.2017.07.23.16.40.26" />
   <default revision="refs/tags/android-7.1.2_r19"
            remote="aosp"
            sync-j="4" />
