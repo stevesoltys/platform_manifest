@@ -598,6 +598,7 @@
   <project path="vendor/google_devices" name="vendor_google_devices" remote="github" />
   <project path="vendor/huawei" name="vendor_huawei" remote="github" />
   <project path="vendor/lge" name="vendor_lge" remote="github" />
+  <project path="vendor/linaro" name="vendor_linaro" remote="github" />
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 
