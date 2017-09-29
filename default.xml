@@ -36,7 +36,7 @@
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
   <project path="art" name="platform_art" groups="pdk" remote="copperheados-github" />
-  <project path="bionic" name="platform_bionic" groups="pdk" remote="copperheados-github" />
+  <project path="bionic" name="platform_bionic" groups="pdk" remote="stevesoltys-github" />
   <project path="bootable/recovery" name="platform_bootable_recovery" groups="pdk" remote="copperheados-github" />
   <project path="copperhead" name="copperhead" remote="copperheados-github" />
   <project path="cts" name="platform/cts" groups="cts,pdk-cw-fs,pdk-fs" />
