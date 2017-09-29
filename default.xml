@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-
+    
   <remote  name="aosp"
            fetch="https://android.googlesource.com"
            review="https://android-review.googlesource.com/" />
-  <remote  name="bitbucket"
+  <remote  name="copperheados-bitbucket"
            fetch="https://bitbucket.org/copperhead-security/"
            revision="refs/heads/oreo-r3-release" />
-  <remote  name="github"
+  <remote  name="copperheados-github"
            fetch="https://github.com/copperheados/"
+           revision="refs/heads/oreo-r3-release" />
+  <remote  name="stevesoltys-github"
+           fetch="https://github.com/stevesoltys/"
+           revision="refs/heads/oreo-r3-release" />
+  <remote  name="local"
+           fetch=".."
            revision="refs/heads/oreo-r3-release" />
   <default revision="refs/tags/android-8.0.0_r9"
            remote="aosp"
            sync-j="4" />
 
-  <project path="build/make" name="platform_build" groups="pdk" remote="github" >
+  <project path="build/make" name="platform_build" groups="pdk" remote="copperheados-github" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -24,22 +30,22 @@
     <linkfile src="tools" dest="build/tools" />
   </project>
   <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed" />
-  <project path="build/kati" name="platform_build_kati" groups="pdk,tradefed" remote="github" />
-  <project path="build/soong" name="platform_build_soong" groups="pdk,tradefed" remote="github" >
+  <project path="build/kati" name="platform_build_kati" groups="pdk,tradefed" remote="copperheados-github" />
+  <project path="build/soong" name="platform_build_soong" groups="pdk,tradefed" remote="copperheados-github" >
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
-  <project path="art" name="platform_art" groups="pdk" remote="github" />
-  <project path="bionic" name="platform_bionic" groups="pdk" remote="github" />
-  <project path="bootable/recovery" name="platform_bootable_recovery" groups="pdk" remote="github" />
-  <project path="copperhead" name="copperhead" remote="github" />
+  <project path="art" name="platform_art" groups="pdk" remote="copperheados-github" />
+  <project path="bionic" name="platform_bionic" groups="pdk" remote="copperheados-github" />
+  <project path="bootable/recovery" name="platform_bootable_recovery" groups="pdk" remote="copperheados-github" />
+  <project path="copperhead" name="copperhead" remote="copperheados-github" />
   <project path="cts" name="platform/cts" groups="cts,pdk-cw-fs,pdk-fs" />
   <project path="dalvik" name="platform/dalvik" groups="pdk-cw-fs,pdk-fs" />
   <project path="developers/build" name="platform/developers/build" />
   <project path="developers/demos" name="platform/developers/demos" />
   <project path="developers/samples/android" name="platform/developers/samples/android" />
   <project path="development" name="platform/development" groups="pdk-cw-fs,pdk-fs" />
-  <project path="device/common" name="device_common" groups="pdk-cw-fs,pdk" remote="github" />
+  <project path="device/common" name="device_common" groups="pdk-cw-fs,pdk" remote="copperheados-github" />
   <project path="device/generic/arm64" name="device/generic/arm64" groups="pdk" />
   <project path="device/generic/armv7-a-neon" name="device/generic/armv7-a-neon" groups="pdk" />
   <project path="device/generic/car" name="device/generic/car" groups="pdk" />
@@ -61,14 +67,14 @@
   <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" groups="device,pdk" />
   <project path="device/google/atv" name="device/google/atv" groups="device,fugu,broadcom_pdk,generic_fs,pdk" />
   <project path="device/google/contexthub" name="device/google/contexthub" groups="device,marlin,pdk" />
-  <project path="device/google/marlin" name="device_google_marlin" groups="device,marlin" remote="github" />
+  <project path="device/google/marlin" name="device_google_marlin" groups="device,marlin" remote="copperheados-github" />
   <project path="device/google/vrservices" name="device/google/vrservices" groups="pdk" clone-depth="1" />
-  <project path="device/huawei/angler" name="device_huawei_angler" groups="device,angler,broadcom_pdk,pdk" remote="github" />
-  <project path="device/lge/bullhead" name="device_lge_bullhead" groups="device,bullhead,pdk" remote="github" />
+  <project path="device/huawei/angler" name="device_huawei_angler" groups="device,angler,broadcom_pdk,pdk" remote="copperheados-github" />
+  <project path="device/lge/bullhead" name="device_lge_bullhead" groups="device,bullhead,pdk" remote="copperheados-github" />
   <project path="device/linaro/bootloader/arm-trusted-firmware" name="device/linaro/bootloader/arm-trusted-firmware" />
   <project path="device/linaro/bootloader/edk2" name="device/linaro/bootloader/edk2" />
   <project path="device/linaro/bootloader/OpenPlatformPkg" name="device/linaro/bootloader/OpenPlatformPkg" />
-  <project path="device/linaro/hikey" name="device_linaro_hikey" groups="device,hikey,pdk" remote="github" />
+  <project path="device/linaro/hikey" name="device_linaro_hikey" groups="device,hikey,pdk" remote="copperheados-github" />
   <project path="device/linaro/hikey-kernel" name="device/linaro/hikey-kernel" groups="device,hikey,pdk" clone-depth="1" />
   <project path="device/sample" name="device/sample" groups="pdk" />
   <project path="docs/source.android.com" name="platform/docs/source.android.com" groups="pdk-cw-fs,pdk-fs" />
@@ -97,13 +103,13 @@
   <project path="external/c-ares" name="platform/external/c-ares" groups="pdk" />
   <project path="external/caliper" name="platform/external/caliper" groups="pdk" />
   <project path="external/cblas" name="platform/external/cblas" groups="pdk" />
-  <project path="external/chromium" name="platform_external_chromium" remote="bitbucket" />
+  <project path="external/chromium" name="platform_external_chromium" remote="copperheados-bitbucket" />
   <project path="external/chromium-libpac" name="platform/external/chromium-libpac" groups="pdk" />
   <project path="external/chromium-trace" name="platform/external/chromium-trace" groups="pdk" />
-  <project path="external/clang" name="platform_external_clang" groups="pdk" remote="github" />
+  <project path="external/clang" name="platform_external_clang" groups="pdk" remote="copperheados-github" />
   <project path="external/cmockery" name="platform/external/cmockery" groups="pdk" />
   <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="pdk" />
-  <project path="external/conscrypt" name="platform_external_conscrypt" groups="pdk" remote="github" />
+  <project path="external/conscrypt" name="platform_external_conscrypt" groups="pdk" remote="copperheados-github" />
   <project path="external/crcalc" name="platform/external/crcalc" groups="pdk" />
   <project path="external/cros/system_api" name="platform/external/cros/system_api" groups="pdk" />
   <project path="external/curl" name="platform/external/curl" groups="pdk" />
@@ -129,10 +135,10 @@
   <project path="external/elfutils" name="platform/external/elfutils" groups="pdk" />
   <project path="external/emma" name="platform/external/emma" groups="pdk" />
   <project path="external/esd" name="platform/external/esd" groups="pdk" />
-  <project path="external/Etar-Calendar" name="platform_external_Etar-Calendar" remote="github" />
+  <project path="external/Etar-Calendar" name="platform_external_Etar-Calendar" remote="copperheados-github" />
   <project path="external/expat" name="platform/external/expat" groups="pdk" />
   <project path="external/eyes-free" name="platform/external/eyes-free" groups="pdk" />
-  <project path="external/F-Droid" name="platform_external_F-Droid" groups="pdk-fs" remote="github" />
+  <project path="external/F-Droid" name="platform_external_F-Droid" groups="pdk-fs" remote="copperheados-github" />
   <project path="external/f2fs-tools" name="platform/external/f2fs-tools" groups="pdk" />
   <project path="external/fdlibm" name="platform/external/fdlibm" groups="pdk" />
   <project path="external/fec" name="platform/external/fec" groups="pdk" />
@@ -234,7 +240,7 @@
   <project path="external/linux-kselftest" name="platform/external/linux-kselftest" groups="vts,pdk" />
   <project path="external/littlemock" name="platform/external/littlemock" groups="pdk" />
   <project path="external/lld" name="platform/external/lld" groups="pdk" />
-  <project path="external/llvm" name="platform_external_llvm" groups="pdk" remote="github" />
+  <project path="external/llvm" name="platform_external_llvm" groups="pdk" remote="copperheados-github" />
   <project path="external/ltp" name="platform/external/ltp" groups="vts,pdk" />
   <project path="external/lz4" name="platform/external/lz4" groups="pdk" />
   <project path="external/lzma" name="platform/external/lzma" groups="pdk" />
@@ -253,7 +259,7 @@
   <project path="external/mp4parser" name="platform/external/mp4parser" groups="pdk" />
   <project path="external/mtpd" name="platform/external/mtpd" groups="pdk" />
   <project path="external/nanohttpd" name="platform/external/nanohttpd" groups="pdk" />
-  <project path="external/nanopb-c" name="platform_external_nanopb-c" groups="pdk" remote="github" />
+  <project path="external/nanopb-c" name="platform_external_nanopb-c" groups="pdk" remote="copperheados-github" />
   <project path="external/naver-fonts" name="platform/external/naver-fonts" groups="pdk" />
   <project path="external/netcat" name="platform/external/netcat" groups="pdk" />
   <project path="external/netperf" name="platform/external/netperf" groups="pdk" />
@@ -264,7 +270,7 @@
   <project path="external/noto-fonts" name="platform/external/noto-fonts" groups="pdk" />
   <project path="external/oauth" name="platform/external/oauth" groups="pdk" />
   <project path="external/objenesis" name="platform/external/objenesis" groups="pdk" />
-  <project path="external/offline-calendar" name="platform_external_offline-calendar" remote="github" />
+  <project path="external/offline-calendar" name="platform_external_offline-calendar" remote="copperheados-github" />
   <project path="external/okhttp" name="platform/external/okhttp" groups="pdk" />
   <project path="external/opencv" name="platform/external/opencv" groups="pdk-cw-fs,pdk-fs" />
   <project path="external/openssh" name="platform/external/openssh" groups="pdk" />
@@ -274,7 +280,7 @@
   <project path="external/pdfium" name="platform/external/pdfium" groups="pdk" />
   <project path="external/piex" name="platform/external/piex" groups="pdk" />
   <project path="external/ppp" name="platform/external/ppp" groups="pdk" />
-  <project path="external/privacy-friendly-netmonitor" name="platform_external_privacy-friendly-netmonitor" remote="github" />
+  <project path="external/privacy-friendly-netmonitor" name="platform_external_privacy-friendly-netmonitor" remote="copperheados-github" />
   <project path="external/proguard" name="platform/external/proguard" groups="pdk" />
   <project path="external/protobuf" name="platform/external/protobuf" groups="pdk" />
   <project path="external/regex-re2" name="platform/external/regex-re2" groups="pdk" />
@@ -288,7 +294,7 @@
   <project path="external/seccomp-tests" name="platform/external/seccomp-tests" groups="pdk" />
   <project path="external/selinux" name="platform/external/selinux" groups="pdk" />
   <project path="external/shflags" name="platform/external/shflags" groups="pdk" />
-  <project path="external/Silence" name="platform_external_Silence" remote="github"/>
+  <project path="external/Silence" name="platform_external_Silence" remote="copperheados-github"/>
   <project path="external/sfntly" name="platform/external/sfntly" groups="pdk,qcom_msm8x26" />
   <project path="external/skia" name="platform/external/skia" groups="pdk,qcom_msm8x26" />
   <project path="external/sl4a" name="platform/external/sl4a" groups="pdk" />
@@ -299,11 +305,11 @@
   <project path="external/spirv-llvm" name="platform/external/spirv-llvm" />
   <project path="external/sonivox" name="platform/external/sonivox" groups="pdk" />
   <project path="external/speex" name="platform/external/speex" groups="pdk" />
-  <project path="external/sqlite" name="platform_external_sqlite" groups="pdk" remote="github" />
+  <project path="external/sqlite" name="platform_external_sqlite" groups="pdk" remote="copperheados-github" />
   <project path="external/squashfs-tools" name="platform/external/squashfs-tools" groups="pdk" />
   <project path="external/strace" name="platform/external/strace" groups="pdk" />
   <project path="external/stressapptest" name="platform/external/stressapptest" groups="pdk" />
-  <project path="external/svox" name="platform_external_svox" groups="pdk" remote="bitbucket" />
+  <project path="external/svox" name="platform_external_svox" groups="pdk" remote="copperheados-bitbucket" />
   <project path="external/syslinux" name="platform/external/syslinux" groups="pdk" />
   <project path="external/swiftshader" name="platform/external/swiftshader" groups="pdk" />
   <project path="external/tagsoup" name="platform/external/tagsoup" groups="pdk" />
@@ -320,7 +326,7 @@
   <project path="external/tremolo" name="platform/external/tremolo" groups="pdk" />
   <project path="external/unicode" name="platform/external/unicode" groups="pdk" />
   <project path="external/universal-tween-engine" name="platform/external/universal-tween-engine" />
-  <project path="external/v8" name="platform_external_v8" groups="pdk" remote="github" />
+  <project path="external/v8" name="platform_external_v8" groups="pdk" remote="copperheados-github" />
   <project path="external/valgrind" name="platform/external/valgrind" groups="pdk" />
   <project path="external/vboot_reference" name="platform/external/vboot_reference" groups="vboot,pdk-fs" />
   <project path="external/vixl" name="platform/external/vixl" groups="pdk" />
@@ -329,7 +335,7 @@
   <project path="external/vulkan-validation-layers" name="platform/external/vulkan-validation-layers" groups="pdk" />
   <project path="external/webp" name="platform/external/webp" groups="pdk,qcom_msm8x26" />
   <project path="external/webrtc" name="platform/external/webrtc" groups="pdk" />
-  <project path="external/wpa_supplicant_8" name="platform_external_wpa_supplicant_8" groups="pdk" remote="github" />
+  <project path="external/wpa_supplicant_8" name="platform_external_wpa_supplicant_8" groups="pdk" remote="copperheados-github" />
   <project path="external/wycheproof" name="platform/external/wycheproof" groups="pdk" />
   <project path="external/x264" name="platform/external/x264" groups="pdk" />
   <project path="external/xmlrpcpp" name="platform/external/xmlrpcpp" groups="pdk" />
@@ -338,17 +344,17 @@
   <project path="external/zlib" name="platform/external/zlib" groups="pdk" />
   <project path="external/zopfli" name="platform/external/zopfli" groups="pdk" />
   <project path="external/zxing" name="platform/external/zxing" groups="pdk" />
-  <project path="frameworks/av" name="platform_frameworks_av" groups="pdk" remote="github" />
-  <project path="frameworks/base" name="platform_frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="github" />
+  <project path="frameworks/av" name="platform_frameworks_av" groups="pdk" remote="copperheados-github" />
+  <project path="frameworks/base" name="platform_frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="copperheados-github" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="pdk" />
   <project path="frameworks/compile/mclinker" name="platform/frameworks/compile/mclinker" groups="pdk" />
   <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="pdk" />
-  <project path="frameworks/ex" name="platform_frameworks_ex" groups="pdk-cw-fs,pdk-fs" remote="github" />
+  <project path="frameworks/ex" name="platform_frameworks_ex" groups="pdk-cw-fs,pdk-fs" remote="copperheados-github" />
   <project path="frameworks/hardware/interfaces" name="platform/frameworks/hardware/interfaces" groups="pdk" />
-  <project path="frameworks/minikin" name="platform_frameworks_minikin" groups="pdk-cw-fs,pdk-fs" remote="github" />
+  <project path="frameworks/minikin" name="platform_frameworks_minikin" groups="pdk-cw-fs,pdk-fs" remote="copperheados-github" />
   <project path="frameworks/ml" name="platform/frameworks/ml" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/multidex" name="platform/frameworks/multidex" groups="pdk-cw-fs,pdk-fs" />
-  <project path="frameworks/native" name="platform_frameworks_native" groups="pdk" remote="github" />
+  <project path="frameworks/native" name="platform_frameworks_native" groups="pdk" remote="copperheados-github" />
   <project path="frameworks/opt/bitmap" name="platform/frameworks/opt/bitmap" groups="pdk-fs" />
   <project path="frameworks/opt/bluetooth" name="platform/frameworks/opt/bluetooth" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/opt/calendar" name="platform/frameworks/opt/calendar" groups="pdk-cw-fs,pdk-fs" />
@@ -361,7 +367,7 @@
   <project path="frameworks/opt/net/ethernet" name="platform/frameworks/opt/net/ethernet" groups="pdk-fs" />
   <project path="frameworks/opt/net/ims" name="platform/frameworks/opt/net/ims" groups="frameworks_ims,pdk-cw-fs,pdk-fs" />
   <project path="frameworks/opt/net/voip" name="platform/frameworks/opt/net/voip" groups="pdk-cw-fs,pdk-fs" />
-  <project path="frameworks/opt/net/wifi" name="platform_frameworks_opt_net_wifi" groups="pdk" remote="github" />
+  <project path="frameworks/opt/net/wifi" name="platform_frameworks_opt_net_wifi" groups="pdk" remote="copperheados-github" />
   <project path="frameworks/opt/photoviewer" name="platform/frameworks/opt/photoviewer" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/opt/setupwizard" name="platform/frameworks/opt/setupwizard" groups="pdk-cw-fs,pdk-fs" />
   <project path="frameworks/opt/telephony" name="platform/frameworks/opt/telephony" groups="pdk" />
@@ -413,50 +419,50 @@
   <project path="hardware/qcom/power" name="platform/hardware/qcom/power" groups="qcom,pdk" />
   <project path="hardware/qcom/wlan" name="platform/hardware/qcom/wlan" groups="qcom_wlan,pdk" />
   <project path="hardware/ril" name="platform/hardware/ril" groups="pdk" />
-  <project path="kernel/google/marlin" name="kernel_google_marlin" remote="github" />
-  <project path="kernel/huawei/angler" name="kernel_huawei_angler" remote="github" />
-  <project path="kernel/lge/bullhead" name="kernel_lge_bullhead" remote="github" />
+  <project path="kernel/google/marlin" name="kernel_google_marlin" remote="copperheados-github" />
+  <project path="kernel/huawei/angler" name="kernel_huawei_angler" remote="copperheados-github" />
+  <project path="kernel/lge/bullhead" name="kernel_lge_bullhead" remote="copperheados-github" />
   <project path="kernel/tests" name="kernel/tests" />
-  <project path="libcore" name="platform_libcore" groups="pdk" remote="github" />
+  <project path="libcore" name="platform_libcore" groups="pdk" remote="copperheados-github" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
-  <project path="packages/apps/Backup" name="platform_packages_apps_Backup" remote="github" />
+  <project path="packages/apps/Backup" name="platform_packages_apps_Backup" remote="local" />
   <project path="packages/apps/BasicSmsReceiver" name="platform/packages/apps/BasicSmsReceiver" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/apps/Bluetooth" name="platform_packages_apps_Bluetooth" groups="pdk-cw-fs,pdk-fs" remote="github" />
-  <project path="packages/apps/Camera2" name="platform_packages_apps_Camera2" groups="pdk-fs" remote="github" />
+  <project path="packages/apps/Bluetooth" name="platform_packages_apps_Bluetooth" groups="pdk-cw-fs,pdk-fs" remote="copperheados-github" />
+  <project path="packages/apps/Camera2" name="platform_packages_apps_Camera2" groups="pdk-fs" remote="copperheados-github" />
   <project path="packages/apps/CarrierConfig" name="platform/packages/apps/CarrierConfig" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/apps/CellBroadcastReceiver" name="platform/packages/apps/CellBroadcastReceiver" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/apps/CertInstaller" name="platform/packages/apps/CertInstaller" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/apps/Contacts" name="platform_packages_apps_Contacts" groups="pdk-fs" remote="github" />
-  <project path="packages/apps/DeskClock" name="platform_packages_apps_DeskClock" groups="pdk-fs" remote="github" />
+  <project path="packages/apps/Contacts" name="platform_packages_apps_Contacts" groups="pdk-fs" remote="copperheados-github" />
+  <project path="packages/apps/DeskClock" name="platform_packages_apps_DeskClock" groups="pdk-fs" remote="copperheados-github" />
   <project path="packages/apps/DevCamera" name="platform/packages/apps/DevCamera" groups="pdk" />
   <project path="packages/apps/Dialer" name="platform/packages/apps/Dialer" groups="pdk-fs" />
   <project path="packages/apps/DocumentsUI" name="platform/packages/apps/DocumentsUI" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/apps/Email" name="platform/packages/apps/Email" groups="pdk-fs" />
   <project path="packages/apps/EmergencyInfo" name="platform/packages/apps/EmergencyInfo" groups="pdk-fs" />
-  <project path="packages/apps/ExactCalculator" name="platform_packages_apps_ExactCalculator" groups="pdk-fs" remote="github" />
-  <project path="packages/apps/F-Droid/privileged-extension" name="platform_packages_apps_F-Droid_privileged-extension" remote="github" />
+  <project path="packages/apps/ExactCalculator" name="platform_packages_apps_ExactCalculator" groups="pdk-fs" remote="copperheados-github" />
+  <project path="packages/apps/F-Droid/privileged-extension" name="platform_packages_apps_F-Droid_privileged-extension" remote="copperheados-github" />
   <project path="packages/apps/Gallery" name="platform/packages/apps/Gallery" groups="pdk-fs" />
-  <project path="packages/apps/Gallery2" name="platform_packages_apps_Gallery2" groups="pdk-fs" remote="github" />
+  <project path="packages/apps/Gallery2" name="platform_packages_apps_Gallery2" groups="pdk-fs" remote="copperheados-github" />
   <project path="packages/apps/HTMLViewer" name="platform/packages/apps/HTMLViewer" groups="pdk-fs" />
   <project path="packages/apps/KeyChain" name="platform/packages/apps/KeyChain" groups="pdk-fs" />
-  <project path="packages/apps/Launcher3" name="platform_packages_apps_Launcher3" groups="pdk-fs" remote="github" />
+  <project path="packages/apps/Launcher3" name="platform_packages_apps_Launcher3" groups="pdk-fs" remote="copperheados-github" />
   <project path="packages/apps/LegacyCamera" name="platform/packages/apps/LegacyCamera" groups="pdk-fs" />
   <project path="packages/apps/ManagedProvisioning" name="platform/packages/apps/ManagedProvisioning" groups="pdk-fs" />
   <project path="packages/apps/Messaging" name="platform/packages/apps/Messaging" groups="pdk-fs" />
-  <project path="packages/apps/Music" name="platform_packages_apps_Music" groups="pdk-fs" remote="github" />
+  <project path="packages/apps/Music" name="platform_packages_apps_Music" groups="pdk-fs" remote="copperheados-github" />
   <project path="packages/apps/MusicFX" name="platform/packages/apps/MusicFX" groups="pdk-fs" />
-  <project path="packages/apps/Nfc" name="platform_packages_apps_Nfc" groups="apps_nfc,pdk-fs" remote="github" />
+  <project path="packages/apps/Nfc" name="platform_packages_apps_Nfc" groups="apps_nfc,pdk-fs" remote="copperheados-github" />
   <project path="packages/apps/OneTimeInitializer" name="platform/packages/apps/OneTimeInitializer" groups="pdk-fs" />
-  <project path="packages/apps/PackageInstaller" name="platform_packages_apps_PackageInstaller" groups="pdk-cw-fs,pdk-fs" remote="github" />
-  <project path="packages/apps/PdfViewer" name="platform_packages_apps_PdfViewer" remote="github" />
+  <project path="packages/apps/PackageInstaller" name="platform_packages_apps_PackageInstaller" groups="pdk-cw-fs,pdk-fs" remote="copperheados-github" />
+  <project path="packages/apps/PdfViewer" name="platform_packages_apps_PdfViewer" remote="copperheados-github" />
   <project path="packages/apps/Phone" name="platform/packages/apps/Phone" groups="pdk-fs" />
   <project path="packages/apps/PhoneCommon" name="platform/packages/apps/PhoneCommon" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/apps/Protips" name="platform/packages/apps/Protips" groups="pdk-fs" />
   <project path="packages/apps/Provision" name="platform/packages/apps/Provision" groups="pdk-fs" />
-  <project path="packages/apps/QuickSearchBox" name="platform_packages_apps_QuickSearchBox" groups="pdk-fs" remote="github" />
+  <project path="packages/apps/QuickSearchBox" name="platform_packages_apps_QuickSearchBox" groups="pdk-fs" remote="copperheados-github" />
   <project path="packages/apps/RetailDemo" name="platform/packages/apps/RetailDemo" groups="pdk-fs" />
   <project path="packages/apps/SafetyRegulatoryInfo" name="platform/packages/apps/SafetyRegulatoryInfo" groups="pdk-fs" />
-  <project path="packages/apps/Settings" name="platform_packages_apps_Settings" groups="pdk-fs" remote="github" />
+  <project path="packages/apps/Settings" name="platform_packages_apps_Settings" groups="pdk-fs" remote="copperheados-github" />
   <project path="packages/apps/SoundRecorder" name="platform/packages/apps/SoundRecorder" groups="pdk-fs" />
   <project path="packages/apps/SpareParts" name="platform/packages/apps/SpareParts" groups="pdk-fs" />
   <project path="packages/apps/SpeechRecorder" name="platform/packages/apps/SpeechRecorder" groups="pdk-fs" />
@@ -468,10 +474,10 @@
   <project path="packages/apps/TvSettings" name="platform/packages/apps/TvSettings" groups="pdk-fs" />
   <project path="packages/apps/TV" name="platform/packages/apps/TV" />
   <project path="packages/apps/UnifiedEmail" name="platform/packages/apps/UnifiedEmail" groups="pdk-fs" />
-  <project path="packages/apps/Updater" name="platform_packages_apps_Updater" remote="github" />
+  <project path="packages/apps/Updater" name="platform_packages_apps_Updater" remote="stevesoltys-github" />
   <project path="packages/apps/WallpaperPicker" name="platform/packages/apps/WallpaperPicker" groups="pdk-fs" />
   <project path="packages/experimental" name="platform/packages/experimental" />
-  <project path="packages/inputmethods/LatinIME" name="platform_packages_inputmethods_LatinIME" groups="pdk-fs" remote="github" />
+  <project path="packages/inputmethods/LatinIME" name="platform_packages_inputmethods_LatinIME" groups="pdk-fs" remote="copperheados-github" />
   <project path="packages/inputmethods/OpenWnn" name="platform/packages/inputmethods/OpenWnn" groups="pdk-fs" />
   <project path="packages/providers/ApplicationsProvider" name="platform/packages/providers/ApplicationsProvider" groups="pdk-fs" />
   <project path="packages/providers/BlockedNumberProvider" name="platform/packages/providers/BlockedNumberProvider" groups="pdk-fs" />
@@ -479,7 +485,7 @@
   <project path="packages/providers/CalendarProvider" name="platform/packages/providers/CalendarProvider" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/providers/CallLogProvider" name="platform/packages/providers/CallLogProvider" groups="pdk-fs" />
   <project path="packages/providers/ContactsProvider" name="platform/packages/providers/ContactsProvider" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/providers/DownloadProvider" name="platform_packages_providers_DownloadProvider" groups="pdk-cw-fs,pdk-fs" remote="github" />
+  <project path="packages/providers/DownloadProvider" name="platform_packages_providers_DownloadProvider" groups="pdk-cw-fs,pdk-fs" remote="copperheados-github" />
   <project path="packages/providers/MediaProvider" name="platform/packages/providers/MediaProvider" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/providers/PartnerBookmarksProvider" name="platform/packages/providers/PartnerBookmarksProvider" groups="pdk-fs" />
   <project path="packages/providers/TelephonyProvider" name="platform/packages/providers/TelephonyProvider" groups="pdk-cw-fs,pdk-fs" />
@@ -507,7 +513,7 @@
   <project path="packages/services/Mms" name="platform/packages/services/Mms" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/services/NetworkRecommendation" name="platform/packages/services/NetworkRecommendation" groups="pdk-fs" />
   <project path="packages/services/Telecomm" name="platform/packages/services/Telecomm" groups="pdk-cw-fs,pdk-fs" />
-  <project path="packages/services/Telephony" name="platform_packages_services_Telephony" groups="pdk-cw-fs,pdk-fs" remote="github" />
+  <project path="packages/services/Telephony" name="platform_packages_services_Telephony" groups="pdk-cw-fs,pdk-fs" remote="copperheados-github" />
   <project path="packages/wallpapers/LivePicker" name="platform/packages/wallpapers/LivePicker" groups="pdk-fs" />
   <project path="pdk" name="platform/pdk" groups="pdk" />
   <project path="platform_testing" name="platform/platform_testing" groups="pdk-fs,pdk-cw-fs,cts" />
@@ -517,7 +523,7 @@
   <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" groups="pdk" clone-depth="1" />
   <project path="prebuilts/checkcolor" name="platform/prebuilts/checkcolor" groups="pdk" clone-depth="1" />
   <project path="prebuilts/checkstyle" name="platform/prebuilts/checkstyle" groups="pdk" clone-depth="1" />
-  <project path="prebuilts/clang/host/linux-x86" name="platform_prebuilts_clang_host_linux-x86" groups="pdk" clone-depth="1" remote="github" />
+  <project path="prebuilts/clang/host/linux-x86" name="platform_prebuilts_clang_host_linux-x86" groups="pdk" clone-depth="1" remote="copperheados-github" />
   <project path="prebuilts/devtools" name="platform/prebuilts/devtools" groups="pdk-fs" clone-depth="1" />
   <project path="prebuilts/deqp" name="platform/prebuilts/deqp" groups="pdk-fs" />
   <project path="prebuilts/eclipse" name="platform/prebuilts/eclipse" groups="pdk" clone-depth="1" />
@@ -542,15 +548,15 @@
   <project path="prebuilts/qemu-kernel" name="platform/prebuilts/qemu-kernel" groups="pdk" clone-depth="1" />
   <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk" clone-depth="1" />
   <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="pdk,tools" clone-depth="1" />
-  <project path="script" name="script" remote="github" />
+  <project path="script" name="script" remote="copperheados-github" />
   <project path="sdk" name="platform/sdk" groups="pdk-cw-fs,pdk-fs" />
-  <project path="system/bt" name="platform_system_bt" groups="pdk" remote="github" />
+  <project path="system/bt" name="platform_system_bt" groups="pdk" remote="copperheados-github" />
   <project path="system/ca-certificates" name="platform/system/ca-certificates" groups="pdk" />
   <project path="system/connectivity/wificond" name="platform/system/connectivity/wificond" groups="pdk" />
   <project path="system/connectivity/wifilogd" name="platform/system/connectivity/wifilogd" groups="pdk" />
   <project path="system/chre" name="platform/system/chre" groups="pdk" />
-  <project path="system/core" name="platform_system_core" groups="pdk" remote="github" />
-  <project path="system/extras" name="platform_system_extras" groups="pdk" remote="github" />
+  <project path="system/core" name="platform_system_core" groups="pdk" remote="copperheados-github" />
+  <project path="system/extras" name="platform_system_extras" groups="pdk" remote="copperheados-github" />
   <project path="system/gatekeeper" name="platform/system/gatekeeper" groups="pdk" />
   <project path="system/hardware/interfaces" name="platform/system/hardware/interfaces" groups="pdk" />
   <project path="system/hwservicemanager" name="platform/system/hwservicemanager" groups="pdk" />
@@ -561,11 +567,11 @@
   <project path="system/libufdt" name="platform/system/libufdt" groups="pdk" />
   <project path="system/libvintf" name="platform/system/libvintf" groups="pdk" />
   <project path="system/media" name="platform/system/media" groups="pdk" />
-  <project path="system/netd" name="platform_system_netd" groups="pdk" remote="github" />
+  <project path="system/netd" name="platform_system_netd" groups="pdk" remote="copperheados-github" />
   <project path="system/nfc" name="platform/system/nfc" groups="pdk" />
   <project path="system/nvram" name="platform/system/nvram" />
   <project path="system/security" name="platform/system/security" groups="pdk" />
-  <project path="system/sepolicy" name="platform_system_sepolicy" groups="pdk" remote="github" />
+  <project path="system/sepolicy" name="platform_system_sepolicy" groups="pdk" remote="copperheados-github" />
   <project path="system/tools/aidl" name="platform/system/tools/aidl" groups="pdk" />
   <project path="system/tools/hidl" name="platform/system/tools/hidl" groups="pdk" />
   <project path="system/tpm" name="platform/system/tpm" />
@@ -595,10 +601,10 @@
   <project path="tools/test/connectivity" name="platform/tools/test/connectivity" groups="pdk" />
   <project path="tools/tradefederation/core" name="platform/tools/tradefederation" groups="pdk,tradefed" />
   <project path="tools/tradefederation/contrib" name="platform/tools/tradefederation/contrib" groups="pdk,tradefed" />
-  <project path="vendor/google_devices" name="vendor_google_devices" remote="github" />
-  <project path="vendor/huawei" name="vendor_huawei" remote="github" />
-  <project path="vendor/lge" name="vendor_lge" remote="github" />
-  <project path="vendor/linaro" name="vendor_linaro" remote="github" />
+  <project path="vendor/google_devices" name="vendor_google_devices" remote="copperheados-github" />
+  <project path="vendor/huawei" name="vendor_huawei" remote="copperheados-github" />
+  <project path="vendor/lge" name="vendor_lge" remote="copperheados-github" />
+  <project path="vendor/linaro" name="vendor_linaro" remote="copperheados-github" />
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 
