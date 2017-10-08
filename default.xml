@@ -447,7 +447,6 @@
   <project path="packages/apps/HTMLViewer" name="platform/packages/apps/HTMLViewer" groups="pdk-fs" />
   <project path="packages/apps/KeyChain" name="platform/packages/apps/KeyChain" groups="pdk-fs" />
   <project path="packages/apps/Launcher3" name="platform_packages_apps_Launcher3" groups="pdk-fs" remote="copperheados-github" />
-  <project path="packages/apps/LegacyCamera" name="platform/packages/apps/LegacyCamera" groups="pdk-fs" />
   <project path="packages/apps/ManagedProvisioning" name="platform/packages/apps/ManagedProvisioning" groups="pdk-fs" />
   <project path="packages/apps/Messaging" name="platform/packages/apps/Messaging" groups="pdk-fs" />
   <project path="packages/apps/Music" name="platform_packages_apps_Music" groups="pdk-fs" remote="copperheados-github" />
@@ -602,7 +601,7 @@
   <project path="tools/test/connectivity" name="platform/tools/test/connectivity" groups="pdk" />
   <project path="tools/tradefederation/core" name="platform/tools/tradefederation" groups="pdk,tradefed" />
   <project path="tools/tradefederation/contrib" name="platform/tools/tradefederation/contrib" groups="pdk,tradefed" />
-  <project path="vendor/android-prepare-vendor" name="android-prepare-vendor" remote="github" />
+  <project path="vendor/android-prepare-vendor" name="android-prepare-vendor" remote="copperheados-github" />
   <project path="vendor/linaro" name="vendor_linaro" remote="copperheados-github" />
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
