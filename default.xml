@@ -6,10 +6,10 @@
            review="https://android-review.googlesource.com/" />
   <remote  name="copperheados-bitbucket"
            fetch="https://bitbucket.org/copperhead-security/"
-           revision="refs/tags/OPR6.170623.017.2017.09.29.01" />
+           revision="refs/tags/OPR3.170623.008.2017.10.07.23" />
   <remote  name="copperheados-github"
            fetch="https://github.com/copperheados/"
-           revision="refs/tags/OPR6.170623.017.2017.09.29.01" />
+           revision="refs/tags/OPR3.170623.008.2017.10.07.23" />
   <remote  name="stevesoltys-github"
            fetch="https://github.com/stevesoltys/"
            revision="refs/heads/oreo-r3-release" />
