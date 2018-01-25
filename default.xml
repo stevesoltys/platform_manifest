@@ -11,8 +11,11 @@
            fetch="https://github.com/copperheados/"
            revision="refs/tags/OPM1.171019.012.2018.01.23.20" />
   <remote  name="stevesoltys-github"
-           fetch="https://github.com/stevesoltys/"
-           revision="refs/heads/oreo-mr1-release" />
+      fetch="https://github.com/stevesoltys/"
+      revision="refs/heads/oreo-mr1-release" />
+  <remote  name="stevesoltys-github-master"
+      fetch="https://github.com/stevesoltys/"
+      revision="refs/heads/master" />
   <remote  name="local"
            fetch=".."
            revision="refs/heads/oreo-mr1-release" />
@@ -449,7 +452,7 @@
   <project path="kernel/tests" name="kernel/tests" />
   <project path="libcore" name="platform_libcore" groups="pdk" remote="copperheados-github" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
-  <project path="packages/apps/Backup" name="packages/apps/Backup" remote="stevesoltys-github" />
+  <project path="packages/apps/Backup" name="Backup" remote="stevesoltys-github-master" />
   <project path="packages/apps/BasicSmsReceiver" name="platform/packages/apps/BasicSmsReceiver" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/apps/Bluetooth" name="platform_packages_apps_Bluetooth" groups="pdk-cw-fs,pdk-fs" remote="copperheados-github" />
   <project path="packages/apps/Camera2" name="platform_packages_apps_Camera2" groups="pdk-fs" remote="copperheados-github" />
